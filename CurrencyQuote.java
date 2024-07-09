@@ -8,7 +8,7 @@ import java.net.http.HttpResponse;
 public class CurrencyQuote {
 
     public  ExchangeRate getCurrencyQuote(String fromQuote) {
-        URI requestURL = URI.create("https://v6.exchangerate-api.com/v6/cbb403847e93b40141189e0c/latest/" + fromQuote);
+        URI requestURL = URI.create(System.getenv("API_URL") + fromQuote);
 
         HttpClient client = HttpClient.newHttpClient();
 
